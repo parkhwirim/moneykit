@@ -109,15 +109,20 @@
           <div>
             <label for="income-input" id="income-label" class="block text-xs font-semibold text-slate-500 mb-1.5">월 계약 금액 (세전)</label>
             <div class="relative">
-              <input type="text" id="income-input" value="4,000,000" oninput="formatAndCalculate()" class="w-full text-xl font-bold text-slate-900 pl-4 pr-12 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 text-right" placeholder="0">
+              <input type="text" id="income-input" value="" onfocus="this.select()" oninput="formatAndCalculate()" class="w-full text-xl font-bold text-slate-900 pl-4 pr-12 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 text-right" placeholder="예: 4,000,000">
               <span class="absolute right-4 top-3 text-sm font-semibold text-slate-400">원</span>
             </div>
-            <!-- Quick Add Buttons -->
-            <div class="flex items-center space-x-1.5 mt-2">
-              <button onclick="addIncome(500000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+50만</button>
-              <button onclick="addIncome(1000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+100만</button>
-              <button onclick="addIncome(3000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+300만</button>
-              <button onclick="addIncome(5000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+500만</button>
+            <!-- Quick Add Buttons & Clear -->
+            <div class="flex items-center justify-between mt-2">
+              <div class="flex items-center space-x-1.5">
+                <button onclick="addIncome(500000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+50만</button>
+                <button onclick="addIncome(1000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+100만</button>
+                <button onclick="addIncome(3000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+300만</button>
+                <button onclick="addIncome(5000000)" class="text-xs px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium transition">+500만</button>
+              </div>
+              <button onclick="clearIncome()" class="text-xs px-2 py-1 rounded text-slate-400 hover:text-red-500 font-medium transition">
+                ✕ 초기화
+              </button>
             </div>
           </div>
 
@@ -146,9 +151,9 @@
 
           <!-- 연금저축/IRP 납입 여부 -->
           <div>
-            <label class="block text-xs font-semibold text-slate-500 mb-1.5">연금저축 연간 납입액</label>
+            <label class="block text-xs font-semibold text-slate-500 mb-1.5">연금저축 연간 납입액 (선택사항)</label>
             <div class="relative">
-              <input type="text" id="pension-deduct-input" value="1,200,000" oninput="formatNumberInput(this); calculateFreelancer();" class="w-full text-sm font-semibold text-slate-900 pl-3 pr-10 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 text-right" placeholder="0">
+              <input type="text" id="pension-deduct-input" value="" onfocus="this.select()" oninput="formatNumberInput(this); calculateFreelancer();" class="w-full text-sm font-semibold text-slate-900 pl-3 pr-10 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 text-right" placeholder="예: 1,200,000">
               <span class="absolute right-3 top-2.5 text-xs text-slate-400">원</span>
             </div>
             <p class="text-[11px] text-brand-600 mt-1 font-medium">💡 연간 최대 600만 원까지 16.5% 세액공제(환급) 적용</p>
@@ -565,13 +570,18 @@
         mBtn.className = "py-2 text-sm font-semibold rounded-lg border border-brand-500 bg-brand-50 text-brand-600 transition";
         yBtn.className = "py-2 text-sm font-medium rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition";
         label.innerText = "월 계약 금액 (세전)";
-        input.value = "4,000,000";
+        input.placeholder = "예: 4,000,000";
       } else {
         yBtn.className = "py-2 text-sm font-semibold rounded-lg border border-brand-500 bg-brand-50 text-brand-600 transition";
         mBtn.className = "py-2 text-sm font-medium rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition";
         label.innerText = "연간 총 수입 (세전)";
-        input.value = "48,000,000";
+        input.placeholder = "예: 48,000,000";
       }
+      calculateFreelancer();
+    }
+
+    function clearIncome() {
+      document.getElementById('income-input').value = '';
       calculateFreelancer();
     }
 
@@ -595,6 +605,33 @@
       const rawInput = parseRawNumber(document.getElementById('income-input').value);
       let monthlyGross = 0;
       let annualGross = 0;
+
+      if (rawInput === 0) {
+        document.getElementById('monthly-net-payout').innerText = '0원';
+        document.getElementById('res-gross-income').innerText = '0원';
+        document.getElementById('res-withholding-tax').innerText = '- 0원';
+        document.getElementById('res-local-tax').innerText = '- 0원';
+        document.getElementById('res-total-withheld').innerText = '0원';
+
+        document.getElementById('tax-annual-gross').innerText = '0원';
+        document.getElementById('tax-expenses').innerText = '- 0원';
+        document.getElementById('tax-income-amount').innerText = '0원';
+        document.getElementById('tax-deductions').innerText = '- 0원';
+        document.getElementById('tax-base').innerText = '0원';
+        document.getElementById('tax-calculated').innerText = '0원';
+        document.getElementById('tax-credits').innerText = '- 0원';
+        document.getElementById('tax-final-tax').innerText = '0원';
+        document.getElementById('tax-prepaid').innerText = '0원';
+
+        const badge = document.getElementById('tax-result-badge');
+        badge.className = "text-xs px-2.5 py-0.5 rounded-full font-bold bg-slate-100 text-slate-500 border border-slate-200";
+        badge.innerText = "입력 대기";
+
+        const diffDisplay = document.getElementById('tax-final-diff');
+        diffDisplay.className = "text-2xl font-bold text-slate-400";
+        diffDisplay.innerText = "금액을 입력하면 계산돼요";
+        return;
+      }
 
       if (currentIncomePeriod === 'monthly') {
         monthlyGross = rawInput;
