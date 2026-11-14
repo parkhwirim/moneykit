@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리방침 | 머니킷</title>
+  <meta name="description" content="머니킷의 개인정보 처리 방침입니다. 계산기 입력값, 방문 분석, 구글 애드센스 광고 쿠키와 맞춤 광고 거부 방법을 안내합니다.">
+  <link rel="canonical" href="https://moneykit-three.vercel.app/privacy/">
+  <meta property="og:title" content="개인정보처리방침 | 머니킷">
+  <meta property="og:description" content="머니킷의 개인정보 처리 방침입니다. 계산기 입력값, 방문 분석, 구글 애드센스 광고 쿠키와 맞춤 광고 거부 방법을 안내합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moneykit-three.vercel.app/privacy/">
+  <meta property="og:site_name" content="머니킷">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6',
+              600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+
+    body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .article { word-break: keep-all; }
+    .article h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 2.2rem 0 0.6rem; padding-top: 0.2rem; }
+    .article h3 { font-size: 1rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.4rem; }
+    .article p { font-size: 0.95rem; line-height: 1.9; color: #334155; margin: 0.7rem 0; }
+    .article ul, .article ol { margin: 0.7rem 0; padding-left: 1.3rem; }
+    .article ul { list-style: disc; }
+    .article ol { list-style: decimal; }
+    .article li { font-size: 0.95rem; line-height: 1.85; color: #334155; margin: 0.35rem 0; }
+    .article strong { color: #0f172a; font-weight: 700; }
+    .article .table-wrap { overflow-x: auto; margin: 1rem 0; -webkit-overflow-scrolling: touch; }
+    .article table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.85rem; min-width: 280px; }
+    .article th, .article td { border: 1px solid #e2e8f0; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.6; }
+    .article th { background: #f1f5f9; font-weight: 700; color: #0f172a; }
+    .article .lead { font-size: 1rem; line-height: 1.9; color: #475569; margin-top: 1rem; }
+    .article .note { border-radius: 0.75rem; padding: 0.9rem 1rem; margin: 1.2rem 0; font-size: 0.88rem; line-height: 1.8; }
+    .article .note-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .article .note-slate { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .article .sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+    .article .sources h3, .article .related h3 { font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0 0 0.4rem; }
+    .article .sources ul, .article .related ul { margin: 0; padding-left: 1.1rem; }
+    .article .sources li, .article .related li { font-size: 0.82rem; color: #64748b; }
+    .article .sources a, .article .related a { color: #2563eb; text-decoration: underline; }
+    .article .related { margin-top: 1.6rem; }
+    .article .disclaimer { margin-top: 2rem; background: #f1f5f9; border-radius: 0.75rem; padding: 0.9rem 1rem; }
+    .article .disclaimer p { font-size: 0.8rem; color: #64748b; line-height: 1.7; margin: 0; }
+    .article .cta { margin-top: 2rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .article .cta p { margin: 0; font-size: 0.83rem; color: #64748b; }
+    .article .cta-btn { display: inline-block; text-align: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; padding: 0.65rem 1rem; border-radius: 0.6rem; }
+
+    .article .cta-btn { background: #2563eb; }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 shrink-0">
+        <span class="text-2xl">🪙</span>
+        <span class="font-bold text-lg sm:text-xl tracking-tight text-slate-900">머니킷 <span class="hidden sm:inline text-xs bg-brand-50 text-brand-600 border-brand-100 px-2 py-0.5 rounded-full font-semibold border">MoneyKit</span></span>
+      </a>
+      <nav class="flex items-center space-x-0.5 sm:space-x-2 text-xs sm:text-sm">
+<a href="/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">계산기</a>
+<a href="/articles/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">가이드</a>
+<a href="/about/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">소개</a>
+<a href="/contact/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-grow w-full">
+    <nav class="text-xs text-slate-400 mb-4" aria-label="현재 위치"><a href="/">홈</a> › 개인정보처리방침</nav>
+    <article class="article bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm">
+<h1 class="text-2xl font-bold text-slate-900">개인정보처리방침</h1><p class="lead">머니킷(MoneyKit, 이하 "사이트")이 어떤 정보를 처리하고 어떤 정보를 처리하지 않는지 안내합니다. 시행일은 2026년 11월 14일입니다.</p><h2>1. 계산기에 입력한 값은 수집하지 않습니다</h2><p>수입, 자산, 납입액처럼 계산기에 입력하는 모든 값은 이용자의 웹 브라우저 안에서만 처리됩니다. 서버로 전송되거나 데이터베이스에 저장되지 않으며, 페이지를 닫으면 남지 않습니다. 회원가입과 로그인 기능이 없어 이름·전화번호·주소를 받지 않습니다.</p><p>다만 브라우저의 뒤로 가기나 새로고침으로 화면이 복원될 수 있도록 일부 브라우저가 폼 값을 임시로 기억할 수 있습니다. 이는 이용자 기기 안에서 일어나는 일이며 사이트가 접근하지 않습니다.</p><h2>2. 자동으로 수집되는 정보</h2><p>사이트는 방문 현황을 파악하기 위해 Vercel Web Analytics와 Speed Insights를 사용합니다. 이 도구는 쿠키를 사용하지 않고, 방문자별로 생성한 해시 값을 하루 동안만 사용한 뒤 폐기합니다. 수집되는 항목은 다음과 같이 집계용으로만 쓰입니다.</p><ul><li>방문한 페이지 주소와 유입 경로, 검색어(있는 경우)</li><li>운영체제와 브라우저 종류·버전, 기기 유형(PC·모바일·태블릿)</li><li>접속 시각, 국가·도시 수준의 대략적인 위치</li><li>페이지 로딩 속도 측정값</li></ul><p>이 정보는 특정 개인을 식별하지 않는 통계로만 확인하며, 다른 사이트의 방문 기록과 연결하지 않습니다. 서버 접속 로그(IP 주소, 요청 시각)는 호스팅 사업자인 Vercel이 보안과 장애 대응 목적으로 처리하며, 사이트 운영자가 개별 방문자를 추적하는 데 쓰지 않습니다.</p><h2>3. 광고와 쿠키 (Google AdSense)</h2><p>사이트는 구글 애드센스를 통해 광고를 게재할 수 있습니다. 구글을 포함한 제3자 광고 사업자는 이용자가 이 사이트나 다른 웹사이트를 이전에 방문한 기록을 바탕으로 광고를 게재하기 위해 쿠키를 사용할 수 있습니다.</p><ul><li>구글은 광고 쿠키를 사용해 이 사이트 및 인터넷의 다른 사이트 방문 기록을 토대로 광고를 표시할 수 있습니다.</li><li>이 사이트에 광고를 게재하는 제3자 공급업체와 광고 네트워크도 자체 쿠키를 사용할 수 있습니다.</li><li>이용자는 <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">구글 광고 설정</a>에서 개인 맞춤 광고를 사용 중지할 수 있습니다.</li><li>여러 광고 사업자의 맞춤 광고를 한 번에 거부하려면 <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>를 이용할 수 있습니다.</li><li>브라우저 설정에서 쿠키를 삭제하거나 차단할 수 있습니다.</li></ul><p>쿠키를 삭제해도 구글 광고 설정에서 맞춤 광고를 끄지 않으면 쿠키 기반 정보로 광고가 맞춤 설정될 수 있습니다. 맞춤 광고를 꺼도 IP 주소로 파악한 대략적인 지역, 브라우저 종류, 검색어에 따른 광고는 표시될 수 있습니다.</p><p>구글이 광고에서 쿠키를 사용하는 방식은 <a href="https://policies.google.com/technologies/ads?hl=ko" target="_blank" rel="noopener">구글의 광고 및 개인정보 보호 안내</a>에서 확인할 수 있습니다.</p><p>유럽 경제지역(EEA)·영국·스위스에서 접속하는 방문자에게는 광고 쿠키 사용에 대한 동의를 받아야 할 수 있으며, 이 경우 구글이 인증한 동의 관리 플랫폼(CMP)을 통해 동의 여부를 확인합니다.</p><h2>4. 보유 기간</h2><ul><li><strong>계산기 입력값</strong>: 사이트가 보관하지 않습니다.</li><li><strong>방문 분석 정보</strong>: 방문자 해시는 24시간 뒤 폐기되고, 이후에는 개인을 식별할 수 없는 집계값만 남습니다.</li><li><strong>문의 이메일</strong>: 문의 처리 목적으로만 보관하고, 처리 완료 후 1년 안에 파기합니다. 법령에 따라 보존해야 하는 경우에는 해당 기간 동안 보관합니다.</li><li><strong>광고 쿠키</strong>: 구글의 쿠키 보유 기간과 정책을 따릅니다.</li></ul><h2>5. 이용자의 선택과 권리</h2><p>이용자는 언제든지 브라우저 설정에서 쿠키 저장을 거부하거나 이미 저장된 쿠키를 삭제할 수 있습니다. 맞춤 광고는 구글 광고 설정에서 끌 수 있습니다. 문의 과정에서 보낸 이메일과 내용의 열람·삭제를 요청할 수 있으며, 본인 확인이 필요한 경우 확인 후 처리합니다.</p><h2>6. 제3자 링크</h2><p>가이드 글에는 국세청, 금융위원회, 금융감독원, 구글 등 외부 사이트로 가는 링크가 있습니다. 외부 사이트의 개인정보 처리 방식은 해당 사이트의 방침을 따르며, 사이트는 그 내용에 대해 책임지지 않습니다.</p><h2>7. 아동의 개인정보</h2><p>사이트는 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p><h2>8. 문의처</h2><p>개인정보 처리에 관한 문의와 삭제 요청은 <a href="mailto:hwirim7907@gmail.com" style="color:#2563eb;text-decoration:underline;">hwirim7907@gmail.com</a>으로 보내 주세요.</p><h2>9. 방침의 변경</h2><p>법령이나 사용하는 서비스가 바뀌면 이 방침을 고칩니다. 중요한 변경은 시행일과 함께 이 페이지에 표시하며, 변경 후에도 계속 사이트를 이용하면 변경된 방침에 동의한 것으로 봅니다.</p><p class="text-xs text-slate-400 mt-6">공고일 및 시행일: 2026년 11월 14일</p>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
+    <div class="max-w-3xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-start">
+<a href="/" class="hover:text-slate-800 underline">계산기</a>
+<a href="/articles/" class="hover:text-slate-800 underline">가이드</a>
+<a href="/about/" class="hover:text-slate-800 underline">소개</a>
+<a href="/contact/" class="hover:text-slate-800 underline">문의</a>
+<a href="/privacy/" class="hover:text-slate-800 underline">개인정보처리방침</a>
+      </div>
+      <div>
+        <p class="font-bold text-slate-700">🪙 머니킷 (MoneyKit)</p>
+        <p class="mt-1">프리랜서 및 직장인을 위한 스마트 세테크 & 복리 계산기 서비스</p>
+        <p class="text-slate-400 mt-0.5">본 시뮬레이션 결과는 단순 참고용이며 실제 신고 시 세액과 다를 수 있습니다.</p>
+      </div>
+      <p class="text-slate-400">© 2026 머니킷. 모든 계산과 분석은 이용자의 브라우저에서 이루어집니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

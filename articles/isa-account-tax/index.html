@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISA 비과세 200만 원과 9.9% 분리과세, 실제 절세액 계산 | 머니킷</title>
+  <meta name="description" content="ISA 계좌의 손익통산 구조, 비과세 200만·400만 원, 초과분 9.9% 분리과세, 납입한도와 3년 의무기간, 개편 논의 상황을 정리했습니다.">
+  <link rel="canonical" href="https://moneykit-three.vercel.app/articles/isa-account-tax/">
+  <meta property="og:title" content="ISA 비과세 200만 원과 9.9% 분리과세, 실제 절세액 계산 | 머니킷">
+  <meta property="og:description" content="ISA 계좌의 손익통산 구조, 비과세 200만·400만 원, 초과분 9.9% 분리과세, 납입한도와 3년 의무기간, 개편 논의 상황을 정리했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moneykit-three.vercel.app/articles/isa-account-tax/">
+  <meta property="og:site_name" content="머니킷">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6',
+              600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+
+    body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .article { word-break: keep-all; }
+    .article h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 2.2rem 0 0.6rem; padding-top: 0.2rem; }
+    .article h3 { font-size: 1rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.4rem; }
+    .article p { font-size: 0.95rem; line-height: 1.9; color: #334155; margin: 0.7rem 0; }
+    .article ul, .article ol { margin: 0.7rem 0; padding-left: 1.3rem; }
+    .article ul { list-style: disc; }
+    .article ol { list-style: decimal; }
+    .article li { font-size: 0.95rem; line-height: 1.85; color: #334155; margin: 0.35rem 0; }
+    .article strong { color: #0f172a; font-weight: 700; }
+    .article .table-wrap { overflow-x: auto; margin: 1rem 0; -webkit-overflow-scrolling: touch; }
+    .article table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.85rem; min-width: 280px; }
+    .article th, .article td { border: 1px solid #e2e8f0; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.6; }
+    .article th { background: #f1f5f9; font-weight: 700; color: #0f172a; }
+    .article .lead { font-size: 1rem; line-height: 1.9; color: #475569; margin-top: 1rem; }
+    .article .note { border-radius: 0.75rem; padding: 0.9rem 1rem; margin: 1.2rem 0; font-size: 0.88rem; line-height: 1.8; }
+    .article .note-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .article .note-slate { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .article .sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+    .article .sources h3, .article .related h3 { font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0 0 0.4rem; }
+    .article .sources ul, .article .related ul { margin: 0; padding-left: 1.1rem; }
+    .article .sources li, .article .related li { font-size: 0.82rem; color: #64748b; }
+    .article .sources a, .article .related a { color: #2563eb; text-decoration: underline; }
+    .article .related { margin-top: 1.6rem; }
+    .article .disclaimer { margin-top: 2rem; background: #f1f5f9; border-radius: 0.75rem; padding: 0.9rem 1rem; }
+    .article .disclaimer p { font-size: 0.8rem; color: #64748b; line-height: 1.7; margin: 0; }
+    .article .cta { margin-top: 2rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .article .cta p { margin: 0; font-size: 0.83rem; color: #64748b; }
+    .article .cta-btn { display: inline-block; text-align: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; padding: 0.65rem 1rem; border-radius: 0.6rem; }
+
+    .article .cta-btn { background: #2563eb; }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 shrink-0">
+        <span class="text-2xl">🪙</span>
+        <span class="font-bold text-lg sm:text-xl tracking-tight text-slate-900">머니킷 <span class="hidden sm:inline text-xs bg-brand-50 text-brand-600 border-brand-100 px-2 py-0.5 rounded-full font-semibold border">MoneyKit</span></span>
+      </a>
+      <nav class="flex items-center space-x-0.5 sm:space-x-2 text-xs sm:text-sm">
+<a href="/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">계산기</a>
+<a href="/articles/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">가이드</a>
+<a href="/about/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">소개</a>
+<a href="/contact/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-grow w-full">
+    <nav class="text-xs text-slate-400 mb-4" aria-label="현재 위치"><a href="/">홈</a> › <a href="/articles/">가이드</a> › ISA 비과세 200만 원과 9.9% 분리과세, 실제 절세액 계산</nav>
+    <article class="article bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm">
+<h1 class="text-2xl font-bold text-slate-900">ISA 비과세 200만 원과 9.9% 분리과세, 실제 절세액 계산</h1><p class="text-xs text-slate-400 mt-2">2026년 11월 14일 · 머니킷 가이드</p><p class="lead">ISA(개인종합자산관리계좌)는 예금·펀드·ETF·국내 주식을 한 계좌에 담고, 계좌 전체의 이익과 손실을 합친 순이익에만 세금을 매기는 계좌입니다. 한도와 세율이 여러 숫자로 흩어져 있어 헷갈리기 쉬운데, 2026년 11월 현재 적용되는 기준으로 정리했습니다.</p><h2>1. 일반 계좌와 갈리는 지점: 손익통산</h2><p>일반 계좌에서는 이익이 난 상품마다 15.4%의 이자·배당소득세가 붙고, 손실이 난 상품의 손실은 세금에서 빼 주지 않습니다. ISA는 계좌 안 모든 상품의 이익과 손실을 합산한 순이익에만 과세합니다. 손실이 있는 해에는 과세 대상이 줄어드는 것입니다.</p><p>예를 들어 한 상품에서 300만 원 이익, 다른 상품에서 90만 원 손실이 났다면 일반 계좌는 300만 원에 15.4%를 적용해 46만 2,000원을 냅니다. ISA 일반형은 순이익 210만 원 중 200만 원이 비과세되고, 10만 원에만 9.9%가 붙어 9,900원입니다. 차액은 45만 2,100원입니다.</p><h2>2. 비과세 한도: 일반형 200만 원, 서민형·농어민형 400만 원</h2><p>계좌에서 난 이자와 배당의 순이익 가운데 일반형은 200만 원, 서민형과 농어민형은 400만 원까지 세금이 없습니다. 넘는 금액은 9% 분리과세(지방소득세 포함 9.9%)로 끝나고, 금융소득종합과세(연 2,000만 원 초과)에 합산되지 않습니다.</p><div class="table-wrap"><table><thead><tr><th>순이익 1,000만 원</th><th>세금 계산</th><th>세금</th></tr></thead><tbody><tr><td>일반 계좌</td><td>1,000만 원 × 15.4%</td><td>154만 원</td></tr><tr><td>ISA 일반형</td><td>800만 원 × 9.9%</td><td>79만 2,000원</td></tr><tr><td>ISA 서민형</td><td>600만 원 × 9.9%</td><td>59만 4,000원</td></tr></tbody></table></div><p>같은 수익이라도 계좌에 따라 세금이 두 배 이상 차이 납니다. 다만 ISA는 계좌를 해지할 때 한꺼번에 정산하므로, 중간에 이익이 났다고 매년 세금을 내지는 않습니다.</p><p>서민형 요건은 가입하거나 연장하는 해의 직전 연도 소득으로 판단합니다. 근로소득만 있으면 총급여 5,000만 원 이하, 사업소득 등이 있으면 종합소득금액 3,800만 원 이하입니다. 소득이 없는 19세 이상 거주자도 소득확인증명서를 내면 가입할 수 있습니다.</p><h2>3. 한도와 기간</h2><ul><li><strong>가입 대상</strong>: 만 19세 이상 거주자, 또는 직전 연도 근로소득이 있는 만 15~19세. 직전 3개 과세기간 중 한 번이라도 금융소득종합과세 대상자였던 사람은 가입할 수 없습니다.</li><li><strong>계좌 수</strong>: 전 금융기관을 통틀어 1인 1계좌입니다.</li><li><strong>납입 한도</strong>: 연 2,000만 원, 총 1억 원. 그해 채우지 못한 한도는 다음 해로 넘어갑니다.</li><li><strong>의무 기간</strong>: 3년. 3년이 지나면 만기를 연장할 수 있습니다.</li></ul><p>3년이 되기 전에 해지하면 감면받은 세금을 추징합니다. 납입한 원금 범위에서 꺼내는 것은 해지로 보지 않지만, 원금을 넘겨 인출하면 그날 해지한 것으로 처리됩니다. 사망·해외이주 같은 부득이한 사유는 예외로 둡니다.</p><h2>4. 만기 자금을 연금계좌로 옮기면</h2><p>ISA 만기 자금을 60일 안에 연금저축이나 IRP로 옮기면, 옮긴 금액의 10%를 최대 300만 원까지 세액공제 한도에 더할 수 있습니다. ISA에서 비과세·분리과세로 정리한 돈을 연금계좌에서 다시 한 번 세액공제로 활용하는 구조입니다. 다만 옮긴 돈은 55세 이후 연금으로 받아야 하므로, 사용 계획이 없는 자금에만 적용해야 합니다.</p><h2>5. 지금의 숫자는 바뀔 수 있습니다</h2><p>2024년 정부가 발표한 '연 4,000만 원 납입, 비과세 500만 원' 확대안은 국회를 통과하지 못해 시행되지 않았습니다. 2026년 세제개편안에는 국내 투자 전용 '생산적금융 ISA' 신설과 일반 ISA의 계약기간 제한 같은 내용이 담겨 국회 심의 중입니다. 확정된 법이 아니므로 지금 가입할 때 적용되는 기준은 위에 정리한 현행 수치입니다.</p><div class="note note-amber">한도와 세율은 조세특례제한법 개정으로 바뀝니다. 가입 전에는 금융위원회, 국세청, 금융투자협회 ISA 안내, 또는 가입할 금융사의 최신 공시로 확인하세요.</div><h2>6. ISA가 맞는 사람, 아닌 사람</h2><ul><li>3년 이상 묶어 둘 수 있고, 예금보다 수익을 노리되 세금은 줄이고 싶은 사람에게 맞습니다.</li><li>1~2년 안에 쓸 돈이라면 3년 의무기간 때문에 ISA가 불리할 수 있습니다.</li><li>이미 금융소득이 연 2,000만 원을 넘는 사람은 가입 대상이 아닙니다.</li><li>연금 목적이라면 ISA보다 연금저축·IRP의 세액공제가 유리한 경우가 많습니다.</li></ul><p>ISA와 연금저축은 경쟁 관계가 아니라 순서의 문제입니다. 단기 자금은 ISA에, 노후 자금은 연금계좌에 두고, ISA 만기 자금 중 당장 쓰지 않을 돈을 연금계좌로 옮기는 방식이 일반적입니다.</p><div class="cta"><p>계산기는 입력값을 브라우저 안에서만 처리합니다.</p><a href="/" class="cta-btn">ISA·연금 복리 효과 비교하기 →</a></div><div class="disclaimer"><p>이 글은 일반적인 정보를 제공하기 위해 작성되었으며, 투자·세무·법률 자문이 아닙니다. 세법과 금융 상품의 조건은 개정될 수 있고 개인의 소득·경비·공제 상황에 따라 결과가 달라집니다. 실제 신고와 투자 결정 전에는 국세청(홈택스, 국번 없이 126)이나 금융회사, 세무 전문가의 안내를 확인하세요.</p></div><div class="sources"><h3>참고한 공식 자료</h3><ul><li><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터 - 조세특례제한법 제91조의18(ISA 과세특례)</a></li><li><a href="https://www.fsc.go.kr/" target="_blank" rel="noopener">금융위원회</a></li><li><a href="https://finlife.fss.or.kr/finlife/main/contents.do?menuNo=700060" target="_blank" rel="noopener">금융감독원 금융상품통합비교공시 - 절세금융상품</a></li></ul></div><div class="related"><h3>함께 읽기</h3><ul><li><a href="/articles/pension-irp-tax-credit/">연금저축·IRP 세액공제 900만 원, 채우는 순서</a></li><li><a href="/articles/freelancer-3-3-withholding/">3.3% 원천징수와 5월 종합소득세 환급</a></li><li><a href="/articles/compound-interest-guide/">복리 계산 결과를 읽는 법</a></li></ul></div>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
+    <div class="max-w-3xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-start">
+<a href="/" class="hover:text-slate-800 underline">계산기</a>
+<a href="/articles/" class="hover:text-slate-800 underline">가이드</a>
+<a href="/about/" class="hover:text-slate-800 underline">소개</a>
+<a href="/contact/" class="hover:text-slate-800 underline">문의</a>
+<a href="/privacy/" class="hover:text-slate-800 underline">개인정보처리방침</a>
+      </div>
+      <div>
+        <p class="font-bold text-slate-700">🪙 머니킷 (MoneyKit)</p>
+        <p class="mt-1">프리랜서 및 직장인을 위한 스마트 세테크 & 복리 계산기 서비스</p>
+        <p class="text-slate-400 mt-0.5">본 시뮬레이션 결과는 단순 참고용이며 실제 신고 시 세액과 다를 수 있습니다.</p>
+      </div>
+      <p class="text-slate-400">© 2026 머니킷. 모든 계산과 분석은 이용자의 브라우저에서 이루어집니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

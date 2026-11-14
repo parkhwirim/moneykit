@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.3% 원천징수와 5월 종합소득세 환급, 숫자가 만들어지는 순서 | 머니킷</title>
+  <meta name="description" content="프리랜서가 매달 떼이는 3.3%가 왜 미리 낸 세금인지, 5월 확정신고에서 환급액이 어떤 순서로 계산되는지 단계별로 정리했습니다.">
+  <link rel="canonical" href="https://moneykit-three.vercel.app/articles/freelancer-3-3-withholding/">
+  <meta property="og:title" content="3.3% 원천징수와 5월 종합소득세 환급, 숫자가 만들어지는 순서 | 머니킷">
+  <meta property="og:description" content="프리랜서가 매달 떼이는 3.3%가 왜 미리 낸 세금인지, 5월 확정신고에서 환급액이 어떤 순서로 계산되는지 단계별로 정리했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moneykit-three.vercel.app/articles/freelancer-3-3-withholding/">
+  <meta property="og:site_name" content="머니킷">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6',
+              600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+
+    body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .article { word-break: keep-all; }
+    .article h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 2.2rem 0 0.6rem; padding-top: 0.2rem; }
+    .article h3 { font-size: 1rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.4rem; }
+    .article p { font-size: 0.95rem; line-height: 1.9; color: #334155; margin: 0.7rem 0; }
+    .article ul, .article ol { margin: 0.7rem 0; padding-left: 1.3rem; }
+    .article ul { list-style: disc; }
+    .article ol { list-style: decimal; }
+    .article li { font-size: 0.95rem; line-height: 1.85; color: #334155; margin: 0.35rem 0; }
+    .article strong { color: #0f172a; font-weight: 700; }
+    .article .table-wrap { overflow-x: auto; margin: 1rem 0; -webkit-overflow-scrolling: touch; }
+    .article table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.85rem; min-width: 280px; }
+    .article th, .article td { border: 1px solid #e2e8f0; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.6; }
+    .article th { background: #f1f5f9; font-weight: 700; color: #0f172a; }
+    .article .lead { font-size: 1rem; line-height: 1.9; color: #475569; margin-top: 1rem; }
+    .article .note { border-radius: 0.75rem; padding: 0.9rem 1rem; margin: 1.2rem 0; font-size: 0.88rem; line-height: 1.8; }
+    .article .note-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .article .note-slate { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .article .sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+    .article .sources h3, .article .related h3 { font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0 0 0.4rem; }
+    .article .sources ul, .article .related ul { margin: 0; padding-left: 1.1rem; }
+    .article .sources li, .article .related li { font-size: 0.82rem; color: #64748b; }
+    .article .sources a, .article .related a { color: #2563eb; text-decoration: underline; }
+    .article .related { margin-top: 1.6rem; }
+    .article .disclaimer { margin-top: 2rem; background: #f1f5f9; border-radius: 0.75rem; padding: 0.9rem 1rem; }
+    .article .disclaimer p { font-size: 0.8rem; color: #64748b; line-height: 1.7; margin: 0; }
+    .article .cta { margin-top: 2rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .article .cta p { margin: 0; font-size: 0.83rem; color: #64748b; }
+    .article .cta-btn { display: inline-block; text-align: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; padding: 0.65rem 1rem; border-radius: 0.6rem; }
+
+    .article .cta-btn { background: #2563eb; }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 shrink-0">
+        <span class="text-2xl">🪙</span>
+        <span class="font-bold text-lg sm:text-xl tracking-tight text-slate-900">머니킷 <span class="hidden sm:inline text-xs bg-brand-50 text-brand-600 border-brand-100 px-2 py-0.5 rounded-full font-semibold border">MoneyKit</span></span>
+      </a>
+      <nav class="flex items-center space-x-0.5 sm:space-x-2 text-xs sm:text-sm">
+<a href="/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">계산기</a>
+<a href="/articles/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">가이드</a>
+<a href="/about/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">소개</a>
+<a href="/contact/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-grow w-full">
+    <nav class="text-xs text-slate-400 mb-4" aria-label="현재 위치"><a href="/">홈</a> › <a href="/articles/">가이드</a> › 3.3% 원천징수와 5월 종합소득세 환급, 숫자가 만들어지는 순서</nav>
+    <article class="article bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm">
+<h1 class="text-2xl font-bold text-slate-900">3.3% 원천징수와 5월 종합소득세 환급, 숫자가 만들어지는 순서</h1><p class="text-xs text-slate-400 mt-2">2026년 11월 14일 · 머니킷 가이드</p><p class="lead">프리랜서 통장에서 매달 빠져나가는 3.3%는 최종 세금이 아니라 미리 낸 세금입니다. 5월 종합소득세 신고에서 실제 세금이 확정되면 미리 낸 금액과의 차이만큼 돌려받거나 더 냅니다. 이 차액이 어떤 순서로 계산되는지 알면 환급액이 왜 사람마다 다른지 이해할 수 있습니다.</p><h2>1. 3.3%의 정체: 소득세 3%와 지방소득세 0.3%</h2><p>인적용역을 제공하고 사업소득을 받는 프리랜서는 대금을 받을 때 지급하는 쪽이 세금을 미리 떼고 줍니다. 이를 원천징수라고 합니다. 소득세 3%와 그 10%에 해당하는 지방소득세 0.3%, 합쳐서 3.3%입니다. 100만 원 계약이면 3만 3,000원을 떼고 96만 7,000원이 들어옵니다.</p><p>중요한 점은 이 3.3%가 소득의 크기, 실제 경비, 부양가족을 전혀 고려하지 않은 <strong>총액 기준</strong>이라는 것입니다. 그래서 1년치를 모아 실제 세금을 계산하면 거의 항상 금액이 달라집니다.</p><h2>2. 5월에 실제 세금이 정해지는 순서</h2><p>종합소득세는 다음 순서로 계산합니다. 계산기에서 보이는 숫자도 이 순서를 그대로 따릅니다.</p><ol><li>1년간 받은 수입금액을 모두 더합니다.</li><li>필요경비를 뺍니다(장부 또는 경비율). 여기서 사업소득금액이 나옵니다.</li><li>소득공제(인적공제, 연금보험료공제 등)를 뺍니다. 여기서 과세표준이 나옵니다.</li><li>과세표준에 기본세율을 적용해 산출세액을 구합니다.</li><li>세액공제(연금저축·IRP 납입, 표준세액공제 등)를 뺍니다. 여기서 결정세액이 확정됩니다.</li><li>결정세액에서 이미 낸 3.3%를 뺍니다. 남는 차액이 환급액 또는 추가납부액입니다.</li></ol><div class="table-wrap"><table><thead><tr><th>단계</th><th>계산</th><th>예시(연 수입 4,800만 원, IT 프리랜서)</th></tr></thead><tbody><tr><td>수입금액</td><td>1년 합계</td><td>4,800만 원</td></tr><tr><td>필요경비</td><td>단순경비율 64.1%</td><td>약 3,077만 원</td></tr><tr><td>사업소득금액</td><td>수입 - 경비</td><td>약 1,723만 원</td></tr><tr><td>소득공제</td><td>본인 기본공제 등</td><td>약 150~250만 원</td></tr><tr><td>과세표준</td><td>소득금액 - 소득공제</td><td>약 1,470~1,570만 원</td></tr><tr><td>산출세액</td><td>6~15% 기본세율</td><td>약 88~103만 원</td></tr><tr><td>결정세액</td><td>산출세액 - 세액공제</td><td>약 68~95만 원</td></tr><tr><td>기납부세액</td><td>3.3%로 낸 돈</td><td>158만 4,000원</td></tr><tr><td>정산</td><td>결정세액 - 기납부세액</td><td>약 63~90만 원 환급</td></tr></tbody></table></div><div class="note note-slate">위 표는 구조를 보여 주기 위한 예시입니다. 실제 금액은 부양가족, 연금 납입, 다른 소득, 각종 감면에 따라 달라집니다.</div><h2>3. 필요경비: 장부와 경비율, 어느 쪽이 유리한가</h2><p>환급액을 가장 크게 흔드는 것은 필요경비입니다. 실제 지출 증빙으로 장부를 만들어 신고하면 쓴 만큼 인정됩니다. 장부가 없으면 업종별 경비율로 추정하는데, 일정 규모 이하 사업자는 단순경비율을 적용합니다.</p><div class="table-wrap"><table><thead><tr><th>업종 구분</th><th>단순경비율 적용 기준(직전연도 수입금액)</th></tr></thead><tbody><tr><td>정보통신업, 제조업, 숙박·음식점업 등</td><td>3,600만 원 미만</td></tr><tr><td>전문·과학 및 기술서비스업, 교육서비스업, 부동산임대업 등</td><td>2,400만 원 미만</td></tr><tr><td>도매·소매업, 농림어업, 부동산매매업 등</td><td>6,000만 원 미만</td></tr></tbody></table></div><p>직전 연도 수입금액이 기준을 넘으면 단순경비율을 쓸 수 없고 기준경비율로 넘어갑니다. 전문직 사업자, 현금영수증 가맹점에 가입하지 않은 사업자 등은 수입금액과 관계없이 단순경비율 대상에서 빠집니다. 본인의 업종 코드와 경비율은 국세청 경비율 고시와 홈택스에서 확인해야 합니다.</p><p>장부와 경비율 중 무엇이 유리한지는 실제 경비 규모로 갈립니다. 장비 구입, 업무용 통신비, 프로그램 구독료, 도서·강의비, 클라이언트 미팅 교통비처럼 증빙을 갖춘 지출이 경비율로 인정되는 금액보다 크면 장부가 유리합니다. 그렇지 않으면 경비율이 단순합니다.</p><h2>4. 기본세율: 6%에서 45%까지 8구간</h2><p>2026년 귀속 종합소득세 기본세율은 아래와 같습니다. 소득세법 제55조의 세율 조문은 2022년 말 이후 개정되지 않았고, 국세청이 안내하는 표와 같습니다.</p><div class="table-wrap"><table><thead><tr><th>과세표준</th><th>세율</th><th>산출세액</th></tr></thead><tbody><tr><td>1,400만 원 이하</td><td>6%</td><td>과세표준 × 6%</td></tr><tr><td>1,400만 원 초과 ~ 5,000만 원 이하</td><td>15%</td><td>84만 원 + 초과분 × 15%</td></tr><tr><td>5,000만 원 초과 ~ 8,800만 원 이하</td><td>24%</td><td>624만 원 + 초과분 × 24%</td></tr><tr><td>8,800만 원 초과 ~ 1억 5,000만 원 이하</td><td>35%</td><td>1,536만 원 + 초과분 × 35%</td></tr><tr><td>1억 5,000만 원 초과 ~ 3억 원 이하</td><td>38%</td><td>3,706만 원 + 초과분 × 38%</td></tr><tr><td>3억 원 초과 ~ 5억 원 이하</td><td>40%</td><td>9,406만 원 + 초과분 × 40%</td></tr><tr><td>5억 원 초과 ~ 10억 원 이하</td><td>42%</td><td>1억 7,406만 원 + 초과분 × 42%</td></tr><tr><td>10억 원 초과</td><td>45%</td><td>3억 8,406만 원 + 초과분 × 45%</td></tr></tbody></table></div><p>구간을 넘는다고 전체 소득에 높은 세율이 매겨지는 것은 아닙니다. 넘어간 부분에만 해당 세율이 붙습니다. 예를 들어 과세표준 2,000만 원이면 84만 원에 600만 원의 15%인 90만 원을 더해 174만 원이 됩니다. 여기에 지방소득세 10%가 별도로 붙습니다.</p><h2>5. 그래서 환급이 흔한 이유</h2><ul><li>3.3%는 경비를 빼지 않은 총수입에 매긴 잠정 세율이라, 경비가 반영되면 과세표준이 크게 낮아집니다.</li><li>본인 기본공제 150만 원을 비롯한 인적공제와 연금보험료공제가 추가로 빠집니다.</li><li>연금저축·IRP 납입액은 결정세액에서 직접 빼 주는 세액공제라 환급액을 그만큼 늘립니다.</li><li>소득이 일정하고 단순경비율이 높은 업종일수록 3.3%와 실제 세율의 차이가 커집니다.</li></ul><p>반대로 추가 납부가 나오는 경우도 분명히 있습니다. 연간 소득이 커서 더 높은 세율 구간에 들어가거나, 근로·이자·배당 등 다른 소득이 합산되거나, 3.3%로 처리되지 않은 수입이 섞이면 기납부세액보다 결정세액이 커집니다. 경비율보다 실제 경비가 적은데도 장부 없이 경비율을 적용받은 경우에도 세금이 줄지 않습니다.</p><h2>6. 계산기로 미리 확인할 때</h2><p>머니킷의 3.3% 계산기는 위 순서를 단순화해 보여 줍니다. 기준 수입과 업종, 부양가족 수, 연금저축 납입액을 넣으면 예상 결정세액과 기납부세액의 차이를 계산합니다. 다른 소득, 실제 장부 경비, 각종 감면은 반영하지 않으므로 환급이 날지 추가납부가 날지, 규모가 어느 정도인지 가늠하는 용도로 쓰세요.</p><p>신고는 다음 해 5월 1일부터 31일까지 홈택스에서 직접 하거나 세무대리인에게 맡깁니다. 성실신고확인 대상자는 6월 30일까지입니다. 3.3%로 원천징수된 사업소득이 있어도 신고 의무는 사라지지 않습니다.</p><div class="cta"><p>계산기는 입력값을 브라우저 안에서만 처리합니다.</p><a href="/" class="cta-btn">내 수입으로 환급액 계산하기 →</a></div><div class="disclaimer"><p>이 글은 일반적인 정보를 제공하기 위해 작성되었으며, 투자·세무·법률 자문이 아닙니다. 세법과 금융 상품의 조건은 개정될 수 있고 개인의 소득·경비·공제 상황에 따라 결과가 달라집니다. 실제 신고와 투자 결정 전에는 국세청(홈택스, 국번 없이 126)이나 금융회사, 세무 전문가의 안내를 확인하세요.</p></div><div class="sources"><h3>참고한 공식 자료</h3><ul><li><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7873" target="_blank" rel="noopener">국세청 - 종합소득세 과세표준과 산출세액</a></li><li><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7669" target="_blank" rel="noopener">국세청 - 기장의무와 경비율 판단 기준</a></li><li><a href="https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsId=001565&lsJoLnkSeq=1021858687&print=print" target="_blank" rel="noopener">국가법령정보센터 - 소득세법 제55조(세율)</a></li></ul></div><div class="related"><h3>함께 읽기</h3><ul><li><a href="/articles/pension-irp-tax-credit/">연금저축·IRP 세액공제 900만 원, 채우는 순서</a></li><li><a href="/articles/isa-account-tax/">ISA 비과세 200만 원과 9.9% 분리과세</a></li><li><a href="/articles/compound-interest-guide/">복리 계산 결과를 읽는 법</a></li></ul></div>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
+    <div class="max-w-3xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-start">
+<a href="/" class="hover:text-slate-800 underline">계산기</a>
+<a href="/articles/" class="hover:text-slate-800 underline">가이드</a>
+<a href="/about/" class="hover:text-slate-800 underline">소개</a>
+<a href="/contact/" class="hover:text-slate-800 underline">문의</a>
+<a href="/privacy/" class="hover:text-slate-800 underline">개인정보처리방침</a>
+      </div>
+      <div>
+        <p class="font-bold text-slate-700">🪙 머니킷 (MoneyKit)</p>
+        <p class="mt-1">프리랜서 및 직장인을 위한 스마트 세테크 & 복리 계산기 서비스</p>
+        <p class="text-slate-400 mt-0.5">본 시뮬레이션 결과는 단순 참고용이며 실제 신고 시 세액과 다를 수 있습니다.</p>
+      </div>
+      <p class="text-slate-400">© 2026 머니킷. 모든 계산과 분석은 이용자의 브라우저에서 이루어집니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

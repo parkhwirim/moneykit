@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복리 계산 결과를 읽는 법, 숫자보다 먼저 볼 다섯 가지 | 머니킷</title>
+  <meta name="description" content="복리 계산 결과가 좋아 보이는 이유는 가정 때문입니다. 기간, 수익률 가정, 세금과 수수료, 물가, 변동성 순서로 결과를 읽는 방법을 정리했습니다.">
+  <link rel="canonical" href="https://moneykit-three.vercel.app/articles/compound-interest-guide/">
+  <meta property="og:title" content="복리 계산 결과를 읽는 법, 숫자보다 먼저 볼 다섯 가지 | 머니킷">
+  <meta property="og:description" content="복리 계산 결과가 좋아 보이는 이유는 가정 때문입니다. 기간, 수익률 가정, 세금과 수수료, 물가, 변동성 순서로 결과를 읽는 방법을 정리했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://moneykit-three.vercel.app/articles/compound-interest-guide/">
+  <meta property="og:site_name" content="머니킷">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6',
+              600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+
+    body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .article { word-break: keep-all; }
+    .article h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 2.2rem 0 0.6rem; padding-top: 0.2rem; }
+    .article h3 { font-size: 1rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.4rem; }
+    .article p { font-size: 0.95rem; line-height: 1.9; color: #334155; margin: 0.7rem 0; }
+    .article ul, .article ol { margin: 0.7rem 0; padding-left: 1.3rem; }
+    .article ul { list-style: disc; }
+    .article ol { list-style: decimal; }
+    .article li { font-size: 0.95rem; line-height: 1.85; color: #334155; margin: 0.35rem 0; }
+    .article strong { color: #0f172a; font-weight: 700; }
+    .article .table-wrap { overflow-x: auto; margin: 1rem 0; -webkit-overflow-scrolling: touch; }
+    .article table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.85rem; min-width: 280px; }
+    .article th, .article td { border: 1px solid #e2e8f0; padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.6; }
+    .article th { background: #f1f5f9; font-weight: 700; color: #0f172a; }
+    .article .lead { font-size: 1rem; line-height: 1.9; color: #475569; margin-top: 1rem; }
+    .article .note { border-radius: 0.75rem; padding: 0.9rem 1rem; margin: 1.2rem 0; font-size: 0.88rem; line-height: 1.8; }
+    .article .note-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .article .note-slate { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .article .sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+    .article .sources h3, .article .related h3 { font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0 0 0.4rem; }
+    .article .sources ul, .article .related ul { margin: 0; padding-left: 1.1rem; }
+    .article .sources li, .article .related li { font-size: 0.82rem; color: #64748b; }
+    .article .sources a, .article .related a { color: #2563eb; text-decoration: underline; }
+    .article .related { margin-top: 1.6rem; }
+    .article .disclaimer { margin-top: 2rem; background: #f1f5f9; border-radius: 0.75rem; padding: 0.9rem 1rem; }
+    .article .disclaimer p { font-size: 0.8rem; color: #64748b; line-height: 1.7; margin: 0; }
+    .article .cta { margin-top: 2rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .article .cta p { margin: 0; font-size: 0.83rem; color: #64748b; }
+    .article .cta-btn { display: inline-block; text-align: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; padding: 0.65rem 1rem; border-radius: 0.6rem; }
+
+    .article .cta-btn { background: #2563eb; }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 shrink-0">
+        <span class="text-2xl">🪙</span>
+        <span class="font-bold text-lg sm:text-xl tracking-tight text-slate-900">머니킷 <span class="hidden sm:inline text-xs bg-brand-50 text-brand-600 border-brand-100 px-2 py-0.5 rounded-full font-semibold border">MoneyKit</span></span>
+      </a>
+      <nav class="flex items-center space-x-0.5 sm:space-x-2 text-xs sm:text-sm">
+<a href="/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">계산기</a>
+<a href="/articles/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">가이드</a>
+<a href="/about/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">소개</a>
+<a href="/contact/" class="px-2 py-1.5 rounded-lg font-medium text-slate-600 hover:text-slate-900 ">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-grow w-full">
+    <nav class="text-xs text-slate-400 mb-4" aria-label="현재 위치"><a href="/">홈</a> › <a href="/articles/">가이드</a> › 복리 계산 결과를 읽는 법, 숫자보다 먼저 볼 다섯 가지</nav>
+    <article class="article bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm">
+<h1 class="text-2xl font-bold text-slate-900">복리 계산 결과를 읽는 법, 숫자보다 먼저 볼 다섯 가지</h1><p class="text-xs text-slate-400 mt-2">2026년 11월 14일 · 머니킷 가이드</p><p class="lead">계산기는 입력값을 넣으면 결과를 줍니다. 결과가 커 보이는 이유는 대개 숫자가 아니라 가정 때문입니다. 같은 계산기로 다른 결론에 도달하지 않으려면 결과를 읽는 순서를 알아야 합니다.</p><h2>1. 기간이 수익률보다 강합니다</h2><p>월 50만 원을 연 5%로 넣는다고 가정하고 기간만 바꿔 보겠습니다. 세금과 수수료는 빼지 않은 단순 계산입니다.</p><div class="table-wrap"><table><thead><tr><th>기간</th><th>납입 원금</th><th>평가금액(연 5%)</th><th>원금 대비</th></tr></thead><tbody><tr><td>10년</td><td>6,000만 원</td><td>약 7,764만 원</td><td>1.29배</td></tr><tr><td>20년</td><td>1억 2,000만 원</td><td>약 2억 552만 원</td><td>1.71배</td></tr><tr><td>30년</td><td>1억 8,000만 원</td><td>약 4억 1,613만 원</td><td>2.31배</td></tr></tbody></table></div><p>납입액은 3배로 늘었는데 결과는 5배 이상으로 늘었습니다. 앞에서 생긴 이자가 뒤로 갈수록 다시 이자를 낳기 때문입니다. 복리에서 가장 강한 변수는 수익률이 아니라 '얼마나 오래 두는가'입니다.</p><h2>2. 수익률 가정 1%포인트가 결과를 크게 바꿉니다</h2><p>같은 월 50만 원, 20년 조건에서 수익률만 바꿔 보면 차이가 뚜렷합니다.</p><div class="table-wrap"><table><thead><tr><th>가정 수익률</th><th>20년 뒤 평가금액</th></tr></thead><tbody><tr><td>연 3.5%</td><td>약 1억 7,343만 원</td></tr><tr><td>연 5.0%</td><td>약 2억 552만 원</td></tr><tr><td>연 6.5%</td><td>약 2억 4,521만 원</td></tr></tbody></table></div><p>3.5%와 6.5%의 차이는 7,000만 원이 넘습니다. 그런데 미래의 수익률은 아무도 확정할 수 없습니다. 계산기에 넣은 수익률은 '가정'이지 '예상 수익'이 아닙니다. 결과는 하나의 숫자가 아니라 범위로 읽어야 합니다.</p><h2>3. 세금과 수수료는 조용히 빠집니다</h2><p>일반 계좌에서 이자와 배당은 15.4%가 원천징수됩니다. 매년 세금을 내면 그만큼 복리로 굴릴 재료가 줄어듭니다. 연금저축은 과세가 미뤄지고, ISA는 비과세·분리과세로 정리되므로 같은 수익률에서도 최종 금액이 달라집니다. 계산기의 '일반 계좌 대비 절세 계좌' 비교가 이 차이를 보여 줍니다.</p><p>세금만큼 중요한 것이 수수료입니다. ETF 총보수, 펀드 판매수수료, 운용사 보수는 매년 수익률에서 빠집니다. 연 0.5%의 보수 차이도 20년이면 수백만 원이 됩니다. 계산기의 수익률에 수수료를 반영하지 않았다면 결과는 낙관적입니다.</p><h2>4. 명목 수익률과 실질 가치</h2><p>연 5%로 20년을 굴려 2억 원이 되었다고 해도, 20년 뒤의 2억 원은 오늘의 2억 원이 아닙니다. 물가가 연 3% 오르면 실질 구매력 증가는 연 2% 남짓입니다. 계산 결과는 '미래의 원'으로 읽고, 필요한 금액을 오늘 기준으로 환산해 목표를 세우는 편이 현실적입니다.</p><h2>5. 평균 수익률은 매년 그 수익률이 아닙니다</h2><p>첫해 -30%, 다음 해 +50%인 자산을 생각해 봅시다. 산술 평균은 +10%지만, 1,000만 원은 첫해 700만 원, 다음 해 1,050만 원이 되어 실제 증가율은 5%입니다. 큰 손실은 회복에 더 큰 수익률을 요구합니다. -50%를 만회하려면 +100%가 필요합니다.</p><p>변동성이 큰 자산의 복리 계산은 '매년 같은 수익률'을 가정하기 때문에 실제 결과보다 좋게 보일 수 있습니다. 수익률 곡선이 출렁이는 자산이라면 계산 결과에 여유를 두고, 원금이 줄어들 수 있다는 점도 함께 봐야 합니다.</p><h2>6. 계산기를 제대로 쓰는 법</h2><ul><li>결과보다 입력값을 먼저 확인합니다. 월 납입액, 기간, 수익률, 세금 가정이 내 상황과 맞는지 봅니다.</li><li>비교할 때는 조건을 하나만 바꿉니다. 기간과 수익률을 동시에 바꾸면 무엇 때문에 차이가 났는지 알 수 없습니다.</li><li>결과는 시나리오로 읽습니다. 3.5%, 5%, 6.5% 세 가지로 계산해 범위를 확인합니다.</li><li>3년 안에 쓸 돈에는 복리 효과가 거의 없습니다. 단기 자금은 복리 계산의 대상이 아닙니다.</li></ul><div class="note note-slate">이 글의 예시는 계산 방법을 설명하기 위한 가정입니다. 세금과 수수료를 반영하면 금액은 더 줄어듭니다.</div><div class="cta"><p>계산기는 입력값을 브라우저 안에서만 처리합니다.</p><a href="/" class="cta-btn">내 조건으로 복리 계산하기 →</a></div><div class="disclaimer"><p>이 글은 일반적인 정보를 제공하기 위해 작성되었으며, 투자·세무·법률 자문이 아닙니다. 세법과 금융 상품의 조건은 개정될 수 있고 개인의 소득·경비·공제 상황에 따라 결과가 달라집니다. 실제 신고와 투자 결정 전에는 국세청(홈택스, 국번 없이 126)이나 금융회사, 세무 전문가의 안내를 확인하세요.</p></div><div class="sources"><h3>참고한 공식 자료</h3><ul><li><a href="https://finlife.fss.or.kr/finlife/main/contents.do?menuNo=700060" target="_blank" rel="noopener">금융감독원 금융상품통합비교공시 - 절세금융상품</a></li><li><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7873" target="_blank" rel="noopener">국세청 - 종합소득세 안내</a></li></ul></div><div class="related"><h3>함께 읽기</h3><ul><li><a href="/articles/pension-irp-tax-credit/">연금저축·IRP 세액공제 900만 원, 채우는 순서</a></li><li><a href="/articles/isa-account-tax/">ISA 비과세 200만 원과 9.9% 분리과세</a></li><li><a href="/articles/freelancer-3-3-withholding/">3.3% 원천징수와 5월 종합소득세 환급</a></li></ul></div>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
+    <div class="max-w-3xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-start">
+<a href="/" class="hover:text-slate-800 underline">계산기</a>
+<a href="/articles/" class="hover:text-slate-800 underline">가이드</a>
+<a href="/about/" class="hover:text-slate-800 underline">소개</a>
+<a href="/contact/" class="hover:text-slate-800 underline">문의</a>
+<a href="/privacy/" class="hover:text-slate-800 underline">개인정보처리방침</a>
+      </div>
+      <div>
+        <p class="font-bold text-slate-700">🪙 머니킷 (MoneyKit)</p>
+        <p class="mt-1">프리랜서 및 직장인을 위한 스마트 세테크 & 복리 계산기 서비스</p>
+        <p class="text-slate-400 mt-0.5">본 시뮬레이션 결과는 단순 참고용이며 실제 신고 시 세액과 다를 수 있습니다.</p>
+      </div>
+      <p class="text-slate-400">© 2026 머니킷. 모든 계산과 분석은 이용자의 브라우저에서 이루어집니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
